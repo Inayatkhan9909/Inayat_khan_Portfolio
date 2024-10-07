@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>{{title}}</title>
+  <style>
+  html {
+    scroll-behavior: auto;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #ff7e5f, #e085db, #5a9fd3, #689341);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-animation 4s linear infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .skill-bar {
+    height: 20px;
+    border-radius: 10px;
+  }
+
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2d2d2d;
+    width: 100%;
+    border: 1px solid #444;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .dropdown-content ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .dropdown-content ul li a {
+    display: block;
+    padding: 15px 20px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .dropdown-content ul li a:hover {
+    background-color: #555;
+    color: #ff7e5f;
+  }
+
+  @media (max-width: 640px) {
+    .dropdown-content {
+      display: flex;
+    }
+
+    .dropdown-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body class="text-white bg-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white p-4 sticky top-0 w-screen z-10">
+    <div class="container bg-gray-800 lg:w-10/12 md:w-full mx-auto flex justify-between items-center relative">
+      <div class="flex gap-1">
+        <img src="/assets/Zma_photo_crip.jpg" width="50" class="rounded-full">
+        <div class="lg:text-2xl text-lg font-bold">
+          INAYAT ULLAH KHAN
+          <span class="text-sm block">Full Stack Web Developer</span>
+        </div>
+      </div>
+      <ul class="nav-links flex space-x-10 mt-5 lg:text-2xl text-lg">
+        <li><a href="/" class="hover:text-gray-400">Home</a></li>
+        <li><a href="/about" class="hover:text-gray-400">About</a></li>
+        <li><a href="/projects" class="hover:text-gray-400">Projects</a></li>
+        <li><a href="/contact" class="hover:text-gray-400">Contact</a></li>
+      </ul>
+      <div class="dropdown-toggle flex lg:hidden cursor-pointer">
+        <i class="fas fa-bars text-2xl"></i>
+      </div>
+      <div class="dropdown-content hidden">
+        <ul class="flex flex-col absolute top-5 right-0 w-5/6 py4 bg-gray-800 text-2xl ">
+          <li><a href="/" class="hover:text-gray-400">Home</a></li>
+          <li><a href="/about" class="hover:text-gray-400">About</a></li>
+          <li><a href="/projects" class="hover:text-gray-400">Projects</a></li>
+          <li><a href="/contact" class="hover:text-gray-400">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="bg-gray-900">
+    {{{body}}}
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
